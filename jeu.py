@@ -4,34 +4,32 @@ from constantes import *
 
 
 class Jeu:
-	"""gère les différents états d'un jeu"""
+    """gère les différents états d'un jeu"""
 
-	def __init__(self):
-		self.n1 = niveau.Niveau()
-		self.vie = 3
-		self.bouge = False
-		self.etatJeu = 1
-		
-	def gereJeu(self, ecran):
-		if self.etatJeu == 1: #Debut de niveau
-			for event in pygame.event.get():
-				if event.type == pygame.QUIT:	#Evt de sortie de boucle
-					sys.exit()
-				elif event.type == pygame.MOUSEBUTTONDOWN:
-					self.bouge = True
-				elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-					self.bouge = True
-			self.n1.affiche(ecran)
-			if self.bouge:
-				self.etatJeu = 2
-		elif self.etatJeu == 2: #Niveau en cours
-			self.etatJeu = self.n1.gereNiveau(ecran)
-		elif self.etatJeu ==3: #Changement de niveau
-			pass
-			
-		return 1
-			
-		
+    def __init__(self):
+        self.n1 = niveau.Niveau()
+        self.vie = 3
+        self.bouge = False
+        self.etatJeu = 1
+
+    def gereJeu(self, ecran):
+        if self.etatJeu == 1:  # Debut de niveau
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:  # Evt de sortie de boucle
+                    sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    self.bouge = True
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                    self.bouge = True
+            self.n1.affiche(ecran)
+            if self.bouge:
+                self.etatJeu = 2
+        elif self.etatJeu == 2:  # Niveau en cours
+            self.etatJeu = self.n1.gereNiveau(ecran)
+        elif self.etatJeu == 3:  # Changement de niveau
+            pass
+
+        return 1
 
 
 """
