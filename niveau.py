@@ -15,6 +15,21 @@ class Niveau:
     def is_alive(self):
         return self.vie >= 0
 
+    def balle_perdue(self):
+        if self.b1.ypos < HAUTEUR_ECRAN :
+            self.vie -= 1
+            self.replacer_balle()
+
+    def replacer_balle(self):
+        if self.is_alive():
+            self.b1.xpos = LARGEUR_ECRAN / 2
+            self.b1.ypos = HAUTEUR_ECRAN / 2 
+            self.b1.xvit = 4.5
+            self.b1.yvit = 3.0
+        else:
+            python.exit(0) 
+            #Fo faire une fct pour la défaite
+    
     def affiche_vie(self, ecran):
         ROSE = (255, 192,203)
         BLANC = (255,255,255)
