@@ -27,8 +27,8 @@ class Niveau:
             self.b1.xvit = 4.5
             self.b1.yvit = 3.0
         else:
-            python.exit(0) 
-            #Fo faire une fct pour la défaite
+            pygame.quit()
+            #Fo faire une fct pour la défaite / afficher le high score
     
     def affiche_vie(self, ecran):
         ROSE = (255, 192,203)
