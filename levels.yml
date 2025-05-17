@@ -1,0 +1,9 @@
+1:
+  - ['VOID', 'BRICK', 'VOID']
+  - ['BRICK', 'VOID', 'BRICK']
+  - ['VOID', 'BRICK', 'VOID']
+
+2:
+  - ['VOID', 'BRICK', 'BRICK', 'VOID']
+  - ['VOID']
+  - ['BRICK', 'BRICK', 'BRICK', 'BRICK']

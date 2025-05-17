@@ -12,13 +12,11 @@ class Murdebrique:
     Méthodes : collision(balle), affiche(ecran)
     """
 
-    def __init__(self):
+    def __init__(self, bricks):
         self.mur = []
         ligne = []
-        for i in range(15):
-            ligne.append(brique.Brique((LARGEUR_ECRAN // 15) * i, 50, 2))
-        for i in range(4):
-            for j in range(15):
+        for i in range(len(bricks)):
+            for j in range(len(bricks[i])):
                 ligne.append(brique.Brique((LARGEUR_ECRAN // 15) * j, 70 + 20 * i, 1))
             self.mur.append(ligne)
 
